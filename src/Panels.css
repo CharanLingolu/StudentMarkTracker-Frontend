@@ -1,0 +1,354 @@
+/* Panels.css - Professional, Responsive Styles */
+
+/* ---------------------------------------------------------------------- */
+/* --- GLOBAL LAYOUT AND CARD STYLE --- */
+/* ---------------------------------------------------------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  /* FIX: Explicitly enable scrolling for the main document body */
+  overflow-y: scroll;
+}
+
+/* Base background for panels view */
+.panel-active-body {
+  background-color: #f7f9fb !important;
+  padding: 30px 0;
+}
+
+/* Main Panel Wrapper (The Card) */
+.panel-wrapper {
+  /* Default Admin Theme: Vibrant Purple */
+  --primary-color: #6c5ce7;
+  --primary-light: #9a8dfb;
+  --accent-color: #ff6b6b; /* Danger Red */
+  --text-color-soft: #59616d;
+  --text-color-dark: #2b303b;
+  --border-color: #e0e6ed;
+
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+  color: var(--text-color-soft);
+  transition: box-shadow 0.3s ease-out;
+}
+
+/* --- ROLE-SPECIFIC BRANDING --- */
+
+/* Teacher Panel: Strong Teal */
+.teacher-panel {
+  --primary-color: #16a085;
+  --primary-light: #48c9b0;
+}
+
+/* Student Panel: Bright Blue */
+.student-panel {
+  --primary-color: #3498db;
+  --primary-light: #5dade2;
+}
+
+/* --- PANEL HEADER & LOGOUT --- */
+.panel-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 5px;
+}
+
+.panel-wrapper h1 {
+  font-weight: 800;
+  font-size: 2rem;
+  color: var(--text-color-dark);
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+
+.logout-button {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--primary-color);
+  padding: 8px 15px;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: none !important;
+  margin: 5px;
+}
+
+.logout-button:hover {
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-1px) !important;
+}
+
+/* --- SECTION HEADINGS --- */
+.panel-section {
+  margin-top: 40px;
+}
+
+.panel-section h2,
+.panel-section h3 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--text-color-dark);
+  /* Modern left-border accent */
+  border-left: 5px solid var(--primary-color);
+  padding-left: 15px;
+  padding-bottom: 0;
+  margin-bottom: 25px;
+}
+
+/* --- FORM ELEMENTS (Clean & Modern) --- */
+.input-label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-color-soft);
+}
+
+input:not([type="checkbox"]),
+textarea,
+select {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  color: var(--text-color-dark);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  /* Soft focus glow */
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--primary-color) 40%, transparent);
+}
+
+/* --- BUTTONS (Shared Gradient) */
+button {
+  background: linear-gradient(
+    45deg,
+    var(--primary-color) 0%,
+    var(--primary-light) 100%
+  );
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 10px 25px
+    color-mix(in srgb, var(--primary-color) 50%, transparent);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 35px
+    color-mix(in srgb, var(--primary-color) 70%, transparent);
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Delete/Danger/Accent Buttons (Red) */
+.delete-button,
+.delete-button:hover {
+  background: var(--accent-color);
+  box-shadow: 0 5px 15px
+    color-mix(in srgb, var(--accent-color) 50%, transparent);
+}
+
+/* Small Action Button Style */
+.action-button-small {
+  padding: 8px 12px !important;
+  font-size: 13px !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+}
+
+.action-button-refresh {
+  font-size: 13px;
+  border-radius: 8px;
+  box-shadow: none;
+  padding: 5px 10px;
+  flex: 1;
+}
+
+/* --- LISTS (User/Mark Lists) --- */
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+ul li {
+  padding: 18px 25px;
+  border-bottom: 1px solid #f0f4f8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  transition: background-color 0.2s;
+  color: var(--text-color-dark);
+}
+
+ul li:hover {
+  background-color: #f7f9fb;
+}
+
+ul li:last-child {
+  border-bottom: none;
+}
+
+/* ---------------------------------------------------------------------- */
+/* --- SPECIFIC LIST ITEM STYLES (Admin/Teacher Lists) --- */
+/* ---------------------------------------------------------------------- */
+
+.user-details-readout {
+  flex-grow: 1;
+  text-align: left;
+  line-height: 1.4;
+}
+
+.user-role-tag {
+  font-weight: 600;
+  color: var(--primary-color);
+  text-transform: capitalize;
+}
+
+.user-actions,
+.mark-actions-group {
+  display: flex;
+  gap: 10px;
+  min-width: 250px;
+  justify-content: flex-end;
+}
+
+/* Inline Edit Mode Layout */
+.edit-user-form,
+.edit-mark-group {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  gap: 10px;
+}
+
+.edit-user-form input,
+.edit-user-form select,
+.edit-mark-group input {
+  margin: 0;
+  padding: 8px 10px;
+  font-size: 14px;
+  flex-basis: 30%;
+  min-width: 0;
+}
+
+/* Mark Display in Teacher Panel */
+.mark-display {
+  margin-top: 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-right: 15px;
+  color: var(--primary-color);
+}
+
+/* ---------------------------------------------------------------------- */
+/* --- RESPONSIVENESS (Mobile Adjustments) --- */
+/* ---------------------------------------------------------------------- */
+@media (max-width: 850px) {
+  .panel-wrapper {
+    max-width: 80vw;
+    padding: 25px;
+  }
+
+  .panel-header-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .panel-header-bar h1 {
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .panel-wrapper {
+    padding: 20px;
+  }
+
+  .panel-wrapper h1 {
+    font-size: 1.6rem;
+  }
+
+  .panel-section h2,
+  .panel-section h3 {
+    font-size: 1.3rem;
+  }
+
+  /* List Item Collapse for Mobile */
+  ul li {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .user-details-readout {
+    margin-bottom: 10px;
+  }
+
+  .user-actions,
+  .mark-actions-group {
+    width: 100%;
+    justify-content: space-between;
+    min-width: unset;
+  }
+
+  .user-actions button,
+  .mark-actions-group button {
+    flex-grow: 1;
+  }
+
+  /* Collapse Edit Form for Mobile */
+  .edit-user-form,
+  .edit-mark-group {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .edit-user-form input,
+  .edit-user-form select,
+  .edit-mark-group input {
+    flex-basis: auto;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+  }
+}

@@ -1,0 +1,102 @@
+/* ======================================================= */
+/* 1. Global Styles & Variables (Optional but Recommended) */
+/* ======================================================= */
+:root {
+  --primary-color: #007bff; /* Bright blue for accents */
+  --secondary-color: #f0f2f5; /* Light grey/off-white background */
+  --text-dark: #333333;
+  --text-light: #ffffff;
+  --shadow-light: #ffffff;
+  --shadow-dark: #d1d9e6;
+  --border-radius: 12px;
+}
+
+/* Apply box-sizing for easier layout calculations */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ======================================================= */
+/* 2. Page Layout and Typography */
+/* ======================================================= */
+.role-selector-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  text-align: center;
+}
+
+.role-selector-container h1 {
+  color: white;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.role-selector-container p {
+  color: #c1c8cd;
+  font-size: 1.1em;
+  margin-bottom: 40px;
+}
+
+/* ======================================================= */
+/* 3. Button Layout and Design (Neumorphic Style) */
+/* ======================================================= */
+.role-buttons {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically for mobile */
+  gap: 25px;
+  width: 100%;
+  max-width: 400px; /* Limit width for professional look */
+}
+
+.role-buttons button {
+  /* Base Button Styling */
+  padding: 18px 25px;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  /* Neumorphism Base */
+  background: var(--secondary-color);
+  color: var(--text-dark);
+  box-shadow: 6px 6px 12px var(--primary-color), -6px -6px 12px var(--text-dark);
+}
+
+/* Hover Effect (Slight lift) */
+.role-buttons button:hover {
+  color: var(--primary-color);
+  box-shadow: 4px 4px 8px var(--text-dark), -4px -4px 8px var(--primary-color);
+  transform: translateY(-2px);
+}
+
+/* Active/Click Effect (Depressed/Pressed look) */
+.role-buttons button:active {
+  box-shadow: inset 4px 4px 8px var(--shadow-dark),
+    inset -4px -4px 8px var(--shadow-light);
+  color: var(--primary-color);
+  transform: translateY(1px);
+}
+
+/* ======================================================= */
+/* 4. Desktop/Tablet Responsiveness (Side-by-side buttons) */
+/* ======================================================= */
+@media (min-width: 768px) {
+  .role-buttons {
+    flex-direction: row; /* Arrange buttons horizontally on wider screens */
+    gap: 30px;
+    max-width: 800px;
+  }
+
+  .role-buttons button {
+    flex: 1; /* Make buttons expand equally */
+  }
+}

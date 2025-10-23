@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useAuth } from "./context/AuthContext";
 import "./Panels.css";
 
-const API_BASE = "http://localhost:5000/api";
+const API_BASE = "https://studentmarktracker-backend-873w.onrender.com/api";
 
 const StudentPanel = () => {
   const { auth, logout } = useAuth();

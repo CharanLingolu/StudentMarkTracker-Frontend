@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "./context/AuthContext";
 import LoginPage from "./LoginPage";
 
-const API_BASE = "http://localhost:5000/api";
+const API_BASE = "https://studentmarktracker-backend-873w.onrender.com/api";
 
 function LoginWrapper() {
   // Assuming useAuth now provides an isAuthLoading state
